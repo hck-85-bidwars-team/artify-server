@@ -102,7 +102,7 @@ const startServer = async () => {
     console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
   } catch (error) {
     console.error("❌ Failed to start server:");
-    console.error(error);
+    console.error(error?.stack || error);
 
     if (error.name === "SequelizeConnectionError") {
       console.error("\n💡 Database connection failed. Make sure:");
